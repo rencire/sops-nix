@@ -16,6 +16,7 @@ buildGo124Module {
   ];
 
   subPackages = [ "pkgs/sops-install-secrets" ];
+  requiredSystemFeatures = [ "native-linux-builder" ];
 
   # requires root privileges for tests
   doCheck = false;
