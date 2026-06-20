@@ -16,12 +16,12 @@ buildGo124Module {
   ];
 
   subPackages = [ "pkgs/sops-install-secrets" ];
-  requiredSystemFeatures = [ "native-linux-builder" ];
-
   # requires root privileges for tests
   doCheck = false;
 
   outputs = [ "out" ] ++ lib.optional stdenv.isLinux "unittest";
+
+  requiredSystemFeatures = [ "linux-native-host-builder" ];
 
   postInstall =
     ''
